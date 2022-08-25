@@ -9,7 +9,7 @@ const ProductList = (props) => {
         <OrderedList>
           {props.data.map((data) => {
             return (
-              <ListItem>
+              <ListItem key={data.id}>
                 {data.name} {data.description}
               </ListItem>
             );
