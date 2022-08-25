@@ -1,25 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import UserList from "./components/UserList";
+import ProductList from "./components/ProductList";
 
-function App() {
+import Hoc from "./components/Hoc";
+
+const App = () => {
+  const userData = [
+    {
+      id: 1,
+      name: "John Adam",
+      email: "john123@gmail.com",
+    },
+    {
+      id: 2,
+      name: "Jacinda Shmus",
+      email: "jac@gmail.com",
+    },
+    {
+      id: 3,
+      name: "Linda Li",
+      email: "linda1@gmail.com",
+    },
+    {
+      id: 4,
+      name: "Adam smith",
+      email: "adam@gmail.com",
+    },
+  ];
+  const productData = [
+    {
+      id: 1,
+      name: "Aneeb",
+      desc: "Test description",
+    },
+    {
+      id: 2,
+      name: "Aneeb 2 ",
+      desc: "Test description 2",
+    },
+    {
+      id: 3,
+      name: "Aneeb 3",
+      desc: "Test description 3",
+    },
+    {
+      id: 4,
+      name: "Aneeb 4",
+      desc: "Test description 4",
+    },
+  ];
+  const Users = Hoc(UserList, userData);
+  const Products = Hoc(ProductList, productData);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Users />
+      <Products />
     </div>
   );
-}
+};
 
 export default App;
