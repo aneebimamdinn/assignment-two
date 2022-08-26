@@ -2,7 +2,7 @@ import "./App.css";
 import UserList from "./components/UserList";
 import ProductList from "./components/ProductList";
 
-// import Hoc from "./components/Hoc";
+import Hoc from "./components/Hoc";
 
 const App = () => {
   const userData = [
@@ -49,14 +49,14 @@ const App = () => {
       desc: "Test description 4",
     },
   ];
-//   const Users = Hoc(UserList, userData);
-//   const Products = Hoc(ProductList, productData);
+  const Users = Hoc(UserList, userData);
+  const Products = Hoc(ProductList, productData);
 
 
   return (
     <div>
-      <UserList data={userData} />
-      <ProductList data={productData} />
+      <Users />
+      <Products />
     </div>
   );
 };
